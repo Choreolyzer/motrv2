@@ -3,14 +3,14 @@ import matplotlib.cm as cm
 
 image_folder = "../data/Dataset/mot/DanceTrack/test/blackpink/img1/"
 text_folder = "./blackpink.txt"
-video_name = 'out.avi'
+video_name = 'out.webm'
 
 images = [cv2.imread(os.path.join(image_folder, img)) for img in sorted(os.listdir(image_folder)) if img.endswith(".jpg")]
 frame = images[0]
 
 height, width, layers = frame.shape
 
-video = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*'XVID'), 20, (width,height))
+video = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*'VP80'), 20, (width,height))
 
 # rects
 with open(text_folder, "r") as file:
